@@ -15,3 +15,4 @@ textgraphs==0.5.0
 spacy-entity-linker==1.0.3
 spacy_dbpedia_spotlight==0.2.6
 spacyfishing==0.1.8
+zshot==0.0.8
