@@ -4,7 +4,7 @@ transformers==4.37.2
 kuzu==0.2.0
 python-dotenv==1.0.1
 neo4j==5.17.0
-jupyterlab==4.1.0
+jupyterlab==4.1.1
 jupyterlab_execute_time>=3.1
 spacy==3.7.2
 spacy-llm==0.7.1
@@ -12,3 +12,6 @@ accelerate==0.27.0
 langchain==0.1.6
 span-marker==1.5.0
 textgraphs==0.5.0
+spacy-entity-linker==1.0.3
+spacy_dbpedia_spotlight==0.2.6
+spacyfishing==0.1.8
