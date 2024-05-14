@@ -1,0 +1,66 @@
+{
+    "page": {
+        "article": {
+            "author": "Good Food",
+            "description": "Dark, rich and delicious - the perfect dessert",
+            "id": "97123",
+            "tags": []
+        },
+        "recipe": {
+            "collections": [
+                "Chocolate cake",
+                "Boozy bake"
+            ],
+            "cooking_time": 2100,
+            "prep_time": 1800,
+            "serves": 10,
+            "keywords": [
+                "Cocoa powder",
+                "Dark chocolate",
+                "Dessert",
+                "Decadent",
+                "Pudding",
+                "Afternoon tea",
+                "Booze",
+                "Alcohol",
+                "Ground almond",
+                "Ground almonds",
+                "Kirsch"
+            ],
+            "ratings": 81,
+            "nutrition_info": [
+                "Added sugar 22g",
+                "Carbohydrate 24g",
+                "Kcal 401 calories",
+                "Protein 10g",
+                "Salt 0.66g",
+                "Saturated fat 11g",
+                "Fat 30g"
+            ],
+            "ingredients": [
+                "butter",
+                "flour",
+                "dark chocolate",
+                "egg",
+                "ground almond",
+                "kirsch",
+                "salt",
+                "caster sugar",
+                "cocoa powder"
+            ],
+            "courses": [
+                "Dessert",
+                "Treat",
+                "Buffet"
+            ],
+            "cusine": "British",
+            "diet_types": [
+                "Low-salt"
+            ],
+            "skill_level": "More effort",
+            "post_dates": "1009843200"
+        },
+        "channel": "Recipe",
+        "title": "Seriously rich chocolate cake"
+    }
+}
