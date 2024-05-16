@@ -1,20 +1,8 @@
-import types
-from typing import Callable, Dict, Iterator, List, Tuple, Union
+from typing import Callable, Dict, Iterator, List
 
 import argilla as rg
 from argilla.client.feedback.schemas import SpanValueSchema
-from datasets import (
-    ClassLabel,
-    Dataset,
-    DatasetDict,
-    Features,
-    Sequence,
-    Value,
-    load_dataset,
-)
-from spacy.tokens import Doc
-from spacy.training.iob_utils import biluo_tags_to_offsets, iob_to_biluo
-from spacy.vocab import Vocab
+from datasets import Dataset
 from tqdm import tqdm
 
 
@@ -23,7 +11,7 @@ def template_for_token_classification(labels: Dict[str, str]) -> rg.FeedbackData
 
     There is no pre-defined template in argilla yet, so we define a custom dataset instead.
     The high-level API of this method is TBD.
-    ref: https://docs.argilla.io/en/latest/practical_guides/create_update_dataset/create_dataset.html#define-questions + click on Span
+    cf Argilla docs > "create update dataset" > "define questions" > "span"
     """
     dataset = rg.FeedbackDataset(
         fields=[rg.TextField(name="text")],
@@ -39,28 +27,6 @@ def template_for_token_classification(labels: Dict[str, str]) -> rg.FeedbackData
         ],
     )
     return dataset
-
-
-def iob_to_argilla(
-    row: dict, tokens_field: str = "tokens", tags_field: str = "parsed_ner_tags"
-) -> List[SpanValueSchema]:
-    """Generate argilla compatible annotations from IOB tags.
-
-    IOB stands for inside-outside-beginning and is a tagging format
-    commonly used in research datasets.
-    """
-    doc = Doc(Vocab(), words=row[tokens_field])
-    offsets = biluo_tags_to_offsets(doc, iob_to_biluo(row[tags_field]))
-
-    return [
-        SpanValueSchema(
-            start=start,  # position of the first character of the span
-            end=stop,  # position of the character right after the end of the span
-            label=entity,
-            score=1.0,
-        )
-        for start, stop, entity in offsets
-    ]
 
 
 def dataset_to_records(
