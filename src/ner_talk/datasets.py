@@ -119,3 +119,5 @@ SPANMARKER_LABELS = {
     "TIME": "time",  # Specific and well-defined time intervals, such as eras, historical periods, centuries, years and important days. No months and days of the week.
     "VEHI": "vehicle",  # Cars, motorcycles and other vehicles.
 }
+
+DBPEDIA_LABELS = {"DBPEDIA_ENT": "DBpedia"}
