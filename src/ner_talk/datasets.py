@@ -100,3 +100,22 @@ def load_ontonotes() -> DatasetDict:
         .rename_column("tags", "ner_tags")
         .map(lambda sample: {"parsed_ner_tags": classmap.int2str(sample["ner_tags"])})
     )
+
+
+SPANMARKER_LABELS = {
+    "PER": "person",  # People
+    "ORG": "organization",  # Associations, companies, agencies, institutions, nationalities and religious or political groups
+    "LOC": "location",  # Physical locations (e.g. mountains, bodies of water), geopolitical entities (e.g. cities, states), and facilities (e.g. bridges, buildings, airports).
+    "ANIM": "animal",  # Breeds of dogs, cats and other animals, including their scientific names.
+    "BIO": "biological",  # Genus of fungus, bacteria and protoctists, families of viruses, and other biological entities.
+    "CEL": "celestial",  # Planets, stars, asteroids, comets, nebulae, galaxies and other astronomical objects.
+    "DIS": "disease",  # Physical, mental, infectious, non-infectious, deficiency, inherited, degenerative, social and self-inflicted diseases.
+    "EVE": "event",  # Sport events, battles, wars and other events.
+    "FOOD": "food",  # Foods and drinks.
+    "INST": "instrument",  # Technological instruments, mechanical instruments, musical instruments, and other tools.
+    "MEDIA": "media",  # Titles of films, books, magazines, songs and albums, fictional characters and languages.
+    "PLANT": "plant",  # Types of trees, flowers, and other plants, including their scientific names.
+    "MYTH": "mythological",  # Mythological and religious entities.
+    "TIME": "time",  # Specific and well-defined time intervals, such as eras, historical periods, centuries, years and important days. No months and days of the week.
+    "VEHI": "vehicle",  # Cars, motorcycles and other vehicles.
+}
