@@ -43,7 +43,7 @@ def spacy_to_argilla(
             start=ent.start_char,
             end=ent.end_char,
             label=ent.label_,
-            score=score(ent),
+            score=score(ent) if score else None,
         )
         for ent in doc.ents
     ]
