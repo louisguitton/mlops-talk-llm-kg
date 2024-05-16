@@ -1,8 +1,8 @@
-from typing import List, Type
+from typing import Callable, List, Type
 
 from argilla.client.feedback.schemas import SpanValueSchema
 from spacy.language import Language
-from spacy.tokens import Doc
+from spacy.tokens import Doc, Span
 from spacy.training.iob_utils import biluo_tags_to_offsets, iob_to_biluo
 from spacy.vocab import Vocab
 
@@ -30,7 +30,10 @@ def iob_to_argilla(
 
 
 def spacy_to_argilla(
-    row: dict, nlp: Type[Language], tokens_field: str = "tokens"
+    row: dict,
+    nlp: Type[Language],
+    tokens_field: str = "tokens",
+    score: Callable[[Span], float] = None,
 ) -> List[SpanValueSchema]:
     """Generate argilla-compatible annotations from a spaCy NER model."""
     text = " ".join(row[tokens_field])
@@ -40,7 +43,7 @@ def spacy_to_argilla(
             start=ent.start_char,
             end=ent.end_char,
             label=ent.label_,
-            score=0,  # no confidence score for NER because it's a transition model
+            score=score(ent),
         )
         for ent in doc.ents
     ]

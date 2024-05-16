@@ -28,7 +28,9 @@ nlp.add_pipe(
 records: Iterator[rg.FeedbackRecord] = dataset_to_records(
     ontonotes,
     responses_lambda=None,
-    suggestions_lambda=lambda row: spacy_to_argilla(row, nlp),
+    suggestions_lambda=lambda row: spacy_to_argilla(
+        row, nlp, score=lambda ent: ent._.dbpedia_raw_result["@similarityScore"]
+    ),
 )
 
 dataset: rg.FeedbackDataset = template_for_token_classification(labels=DBPEDIA_LABELS)
