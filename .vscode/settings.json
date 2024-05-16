@@ -4,11 +4,18 @@
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": "explicit"
         },
     },
+    "flake8.args": [
+        "--config=.flake8"
+    ],
+    "black-formatter.args": [
+        "--config",
+        "pyproject.toml"
+    ],
     "isort.args": [
-        "--profile",
-        "black"
+        "--settings-file",
+        "pyproject.toml"
     ],
 }
