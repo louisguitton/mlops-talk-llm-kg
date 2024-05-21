@@ -5,6 +5,7 @@ from spacy.language import Language
 from spacy.tokens import Doc, Span
 from spacy.training.iob_utils import biluo_tags_to_offsets, iob_to_biluo
 from spacy.vocab import Vocab
+from transformers.pipelines.token_classification import TokenClassificationPipeline
 
 
 def iob_to_argilla(
