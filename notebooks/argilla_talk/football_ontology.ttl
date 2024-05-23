@@ -1,0 +1,26 @@
+@prefix :  <http://example.org/#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+
+
+:Country 
+    rdf:type owl:Class ;
+    rdfs:label "Country" .
+
+:Competition rdf:type owl:Class .
+# a competition has a country
+
+:Team rdf:type owl:Class .
+# a team has a country 
+# a team has a coach between start_time and end_time
+# a team takes part in competitions
+
+:Player rdf:type owl:Class .
+# a player has a country (plays for)
+# a player is member of Team between start_time and end_time
+
+# more advanced
+# - a club has multiple teams (female football, eSport, youth teams)
+# - Monaco FC has country=Monaco but plays in Ligue 1 which has country=France

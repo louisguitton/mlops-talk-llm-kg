@@ -1,0 +1,77 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix  owl: <http://www.w3.org/2002/07/owl#> .
+@prefix  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+<https://transfermarkt.com/ontology#age>
+    rdfs:label   "age" ;
+    rdfs:comment "Age of Player" .
+
+<https://transfermarkt.com/ontology#hasPosition>
+    rdfs:label   "hasPosition" ;
+    rdfs:comment "Player's field position" .
+
+<https://transfermarkt.com/ontology#league>
+    rdfs:label   "league" ;
+    rdfs:comment "League that team participates in" .
+
+<https://transfermarkt.com/ontology#nationality>
+    rdfs:label   "nationality" ;
+    rdfs:comment "Nationality of player" .
+
+<https://transfermarkt.com/ontology#season>
+    rdfs:label   "season" ;
+    rdfs:comment "Season of Transfer" .
+
+<https://transfermarkt.com/ontology#timestamp>
+    rdfs:label   "timestamp" ;
+    rdfs:comment "Timestamp of transfer" .
+
+<https://transfermarkt.com/ontology#transferDate>
+    rdfs:label   "transferDate" ;
+    rdfs:comment "Date of transfer" .
+
+<https://transfermarkt.com/ontology#hasFee>
+    rdfs:label   "hasFee" ;
+    rdfs:comment "transfer value" .
+
+<https://transfermarkt.com/ontology#toClub>
+    rdfs:label   "toClub" ;
+    rdfs:comment "Club receiving transferred player" .
+
+<https://transfermarkt.com/ontology#fromClub>
+    rdfs:label   "fromClub" ;
+    rdfs:comment "Club releasing transferred player" .
+
+<https://transfermarkt.com/ontology#country>
+    rdfs:label   "country" ;
+    rdfs:comment "Country of entity" .
+
+<https://transfermarkt.com/ontology#transferredPlayer>
+    rdfs:label   "transferredPlayer" ;
+    rdfs:comment "Plaayer being transferred" .
+
+<https://transfermarkt.com/ontology#Club>
+    rdfs:label   "Club" ;
+    rdfs:comment "Football Club" .
+
+<https://transfermarkt.com/ontology#FootballSeason>
+    rdfs:label   "FootballSeason" ;
+    rdfs:comment "Football Season" .
+
+<https://transfermarkt.com/ontology#League>
+    rdfs:label   "League" ;
+    rdfs:comment "Football League" .
+
+<https://transfermarkt.com/ontology#Player>
+    rdfs:label   "Player" ;
+    rdfs:comment "Football Player" .
+
+<https://transfermarkt.com/ontology#Position>
+    rdfs:label   "Position" ;
+    rdfs:comment "Football Player Position" .
+
+<https://transfermarkt.com/ontology#Transfer>
+    rdfs:label   "Transfer" ;
+    rdfs:comment "Player transfer activity" .
